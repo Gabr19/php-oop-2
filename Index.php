@@ -86,9 +86,9 @@ var_dump($prodotti)
                                 ?>
                             </h3>
                             <h6>
-                                <?php var_dump($prodotto->Categoria->icona) ;  
+                                <?php var_dump($prodotto->categoria->icona) ;  
                                 ?>
-                                <?php var_dump($prodotto->Categoria->nome) ;  
+                                <?php var_dump($prodotto->categoria->nome) ;  
                                 ?>
                             </h6>
                             <h5>
