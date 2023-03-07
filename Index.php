@@ -2,6 +2,7 @@
 
 require_once __DIR__.'/Categoria.php';
 require_once __DIR__.'/Prodotto.php';
+require_once __DIR__.'/Cibo.php';
 
 $categoriaCani = new Categoria(
     'cani',
@@ -42,6 +43,17 @@ $prodotti[] = new Prodotto(
     'img',
     3,
     $categoriaCani
+);
+
+$prodotti[] = new Cibo(
+    'cibo 1',
+    'descrizione cibo 1',
+    3.33,
+    'img',
+    3,
+    $categoriaCani,
+    '12/12/24'
+
 );
 
 var_dump($prodotti)
@@ -99,6 +111,12 @@ var_dump($prodotti)
                             € <?php echo number_format($prodotto->prezzo, 2, ',', '.') ;  
                                 ?>
                             </p>
+                            <?php if (is_a($prodotto, 'Cibo')){?>
+                                <div>
+                                    scadenza: <?php echo $prodotto->scadenza;?>
+                                </div>
+                            <?php } ?>
+                            
                             
 
                         </div>
