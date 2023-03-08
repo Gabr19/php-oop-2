@@ -3,6 +3,7 @@
 require_once __DIR__.'/Categoria.php';
 require_once __DIR__.'/Prodotto.php';
 require_once __DIR__.'/Cibo.php';
+require_once __DIR__.'/Gioco.php';
 
 $categoriaCani = new Categoria(
     'cani',
@@ -53,6 +54,19 @@ $prodotti[] = new Cibo(
     3,
     $categoriaCani,
     '12/12/24'
+
+);
+
+$prodotti[] = new Gioco(
+    'gioco 1',
+    'descrizione gioco 1',
+    7.77,
+    'img',
+    3,
+    $categoriaCani,
+    '12/12/24',
+    'plastica'
+
 
 );
 
@@ -114,6 +128,11 @@ var_dump($prodotti)
                             <?php if (is_a($prodotto, 'Cibo')){?>
                                 <div>
                                     scadenza: <?php echo $prodotto->scadenza;?>
+                                </div>
+                            <?php } ?>
+                            <?php if (is_a($prodotto, 'Gioco')){?>
+                                <div>
+                                    materiale: <?php var_dump($prodotto->getMaterialType(''));?>
                                 </div>
                             <?php } ?>
                             
